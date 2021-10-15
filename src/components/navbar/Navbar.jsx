@@ -1,7 +1,8 @@
 
 import React from "react";
-import './Navbar.scss';
-import logo from '../images/Logo-Wica.jpg'
+import "./Navbar.scss";
+import logo from "/Users/Federico/Desktop/somos-wica/src/images/Logo-Wica.jpg"
+import CartWidget from "../cartWidget/CartWidget";
 
 const Navbar = () => {
 
@@ -25,6 +26,7 @@ const Navbar = () => {
                         <a href="#Contacto">Contacto</a>
                     </li>
                 </ul>
+                <CartWidget />
                 <div className="hamburger">
                     <span className="bar"></span>
                     <span className="bar"></span>
