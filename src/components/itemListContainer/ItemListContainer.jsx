@@ -4,9 +4,13 @@ import "./ItemListContainer.scss";
 const ItemListContainer = (props) => {
 
     return (
-       <h1>
-           {props.greetings}
-       </h1>
+       <div id="itemListContainer">
+           <h1>
+               {props.greetings}
+           </h1>
+           {props.children}
+        </div>
+       
     )
 }
 export default ItemListContainer;

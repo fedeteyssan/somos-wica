@@ -1,0 +1,16 @@
+
+#itemListContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+ 
+
+    h1{
+        margin: 5rem 0;
+        width: fit-content;
+        padding: 1rem;
+        border: groove beige;
+        background-color: beige;
+        color: darkslategray;
+    }
+}
