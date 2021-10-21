@@ -1,32 +1,16 @@
 
-import React, { useState } from "react";
+import React from "react";
 import "./ItemCount.scss";
 
 
-const ItemCount = ({stock, initial}) => {
+const ItemCount = ({initial, onRemove, onAdd}) => {
 
-    const [counter,setCounter] = useState(initial);
-
-    const onRemove = () =>{
-        if(counter>1){
-            setCounter(counter-1);
-        }else{
-            alert("No se puede agregar al carrito menos de 1 unidad");
-        }
-    }
-
-    const onAdd = () =>{
-        if(counter<stock){
-            setCounter(counter+1);
-        }else{
-            alert("LLegaste al límite de unidades")
-        }
-    }
+    
 
     return (
        <div className="counter">
            <button onClick={onRemove}>-</button>
-           <p>{counter}</p>
+           <p>{initial}</p>
            <button onClick={onAdd}>+</button>
        </div>
     )
