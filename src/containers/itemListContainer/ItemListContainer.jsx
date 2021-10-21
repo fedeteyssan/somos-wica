@@ -1,4 +1,5 @@
 import React from "react";
+import ItemCount from "../../components/itemCount/ItemCount";
 import "./ItemListContainer.scss";
 
 const ItemListContainer = (props) => {
@@ -8,9 +9,8 @@ const ItemListContainer = (props) => {
            <h1>
                {props.greetings}
            </h1>
-           {props.children}
+           <ItemCount stock={10} initial={1}/>
         </div>
-       
     )
 }
 export default ItemListContainer;
