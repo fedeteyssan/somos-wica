@@ -1,6 +1,5 @@
 
 import React, { useState, useEffect } from "react";
-import ItemCount from "../../components/itemCount/ItemCount";
 import ItemList from "../../components/itemList/ItemList";
 import catalogue from "../../catalogue.json";
 import "./ItemListContainer.scss";
@@ -27,25 +26,7 @@ const ItemListContainer = (props) => {
     }, []);
 
 
-    const stock=10;
     
-    const [counter,setCounter] = useState(1);
-
-    const onRemove = () =>{
-        if(counter>1){
-            setCounter(counter-1);
-        }else{
-            alert("No se puede agregar al carrito menos de 1 unidad");
-        };
-    };
-
-    const onAdd = () =>{
-        if(counter<stock){
-            setCounter(counter+1);
-        }else{
-            alert("LLegaste al límite de unidades")
-        };
-    };
 
     return (
        <div className="itemListContainer">
@@ -53,10 +34,8 @@ const ItemListContainer = (props) => {
                {props.greetings}
            </h1>
            <div className="itemList">
-               <ItemList items={products}/>
-               <ItemCount initial={counter} onRemove={onRemove} onAdd={onAdd}/>
+               <ItemList items={products}/>  
            </div>
-           
         </div>
     );
 };

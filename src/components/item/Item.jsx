@@ -1,3 +1,4 @@
+import ItemCount from "../../components/itemCount/ItemCount";
 import { Card } from "react-bootstrap";
 import {Button} from "react-bootstrap";
 
@@ -7,13 +8,12 @@ y va a renderizar cada una de sus propiedades*/
 const Item = ({item}) =>{
 
     return(
-        <Card key={item.id} style={{ width: "18rem" }}>
+        <Card key={item.id} style={{ width: "18rem"}}>
             <Card.Img variant="top" src={item.pictureURL} style={{maxHeight: "200px"}}/>
-            <Card.Body>
+            <Card.Body style={{height:"15rem", display:"flex", flexDirection:"column", alignItems:"center", justifyContent:"space-around"}}>
                 <Card.Title>{item.title}</Card.Title>
-                <Card.Text>{item.description}</Card.Text>
-                <p>$ {item.price}</p>
-
+                <Card.Text>$ {item.price}</Card.Text>
+                <ItemCount stock={item.stock}/>
                 <Button variant="primary">Agregar al carrito</Button>
             </Card.Body>
         </Card>

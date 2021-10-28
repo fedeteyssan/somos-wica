@@ -1,12 +1,13 @@
 import React from "react";
 import "./CartWidget.scss";
-import cart from "../..//assets/cart.png"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faShoppingBasket } from "@fortawesome/free-solid-svg-icons";
 
 
 const CartWidget = () => {
 
     return (
-       <img src={cart} alt="" className="cart-icon"/>
+       <FontAwesomeIcon icon={faShoppingBasket} style={{fontSize:"2.5rem", color:"white"}} />
     )
 }
 export default CartWidget;

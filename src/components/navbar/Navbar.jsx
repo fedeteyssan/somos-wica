@@ -1,7 +1,7 @@
 
 import React from "react";
 import "./Navbar.scss";
-import logo from "../../images/Logo-Wica.jpg"
+import logo from "../../assets/Logo-Wica.jpg"
 import CartWidget from "../cartWidget/CartWidget";
 
 const Navbar = () => {
