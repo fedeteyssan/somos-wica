@@ -13,3 +13,8 @@ html{
   text-align: center;
 }
 
+.large-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

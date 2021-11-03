@@ -8,7 +8,7 @@ const ItemListContainer = (props) => {
     
     const [products, setProducts] = useState([]);
 
-    const getProductos = (dataBase) => 
+    const getProducts = (dataBase) => 
         new Promise((resolve, reject) => {
             setTimeout(() => {
                 if (dataBase) {
@@ -20,7 +20,7 @@ const ItemListContainer = (props) => {
     });
 
     useEffect(() => {
-        getProductos(catalogue)
+        getProducts(catalogue)
         .then((result) => setProducts(result))
         .catch((err) => console.log(err));
     }, []);
