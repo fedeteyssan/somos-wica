@@ -15,16 +15,15 @@ const ItemDetailContainer = () => {
 				} else {
 					reject("No existe el producto seleccionado");
 				}
-			}, 2000);
+			}, 1000);
 		});
 
 	useEffect(() => {
 		getProduct(catalogue)
-		.then((result) => {setProduct(result.find((producto) => producto.id === itemId));})
+		.then((result) => {setProduct(result.find((product) => product.id === itemId));})
 		.catch((err) => console.log(err));
 	}, [itemId]);
 
-	console.log(product, "este es ItemDetail");
 
 	return(
         <ItemDetail item={product} />

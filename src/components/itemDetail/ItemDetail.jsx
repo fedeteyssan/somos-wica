@@ -4,7 +4,7 @@ import {Button} from "react-bootstrap";
 import "./ItemDetail.scss";
 
 
-const ItemDetail = ({ item }) => {
+const ItemDetail = ({item}) => {
 
     return (
 		<Card key={item.id} style={{ width: "30rem",  padding:"2rem", border:"solid #ffb11f"}}>
