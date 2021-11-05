@@ -1,29 +1,35 @@
 
-import React from "react";
+
 import "./Navbar.scss";
+import React from "react";
+import { Link } from "react-router-dom";
 import logo from "../../assets/Logo-Wica.jpg"
 import CartWidget from "../cartWidget/CartWidget";
+
 
 const Navbar = () => {
 
     return (
         <header>
             <nav>
-                <a href="index.html">
+                <Link to="/">
                     <img src={logo} alt="" className="brand-logo"/>
-                </a>
+                </Link>
                 <ul className="nav-menu">
                     <li>
-                        <a href="#Nosotros">Nosotros</a>
+                        <Link to="/nosotros">Nosotros</Link>
                     </li>
                     <li>
-                        <a href="#Productos">Productos</a>
+                    <Link to="/categoria/medallones">Medallones</Link>
                     </li>
                     <li>
-                        <a href="#Donde-comprar">Donde comprar</a>
+                    <Link to="/categoria/nuggets">Nuggets</Link>
                     </li>
                     <li>
-                        <a href="#Contacto">Contacto</a>
+                    <Link to="/donde-comprar">Donde Comprar</Link>
+                    </li>
+                    <li>
+                    <Link to="/contacto">Contacto</Link>
                     </li>
                 </ul>
                 <CartWidget />

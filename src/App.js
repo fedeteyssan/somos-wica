@@ -1,5 +1,5 @@
-
 import './App.css';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from "./components/navbar/Navbar";
 import ItemDetailContainer from './containers/itemDetailContainer/ItemDetailContainer';
 import ItemListContainer from './containers/itemListContainer/ItemListContainer';
@@ -7,15 +7,22 @@ import ItemListContainer from './containers/itemListContainer/ItemListContainer'
 
 function App() {
   return (
-    <div className="App">
+    <BrowserRouter>
       <Navbar/>
-      <div className="large-container">
-        <ItemListContainer greetings="Bienvenidos a Somos Wica" />
-        <ItemDetailContainer />
-      </div>
-      
-    </div>
+      <Routes>
+        <Route exact path="/">
+          <main className="App">
+            <ItemListContainer greetings="Bienvenidos a Somos Wica" />
+          </main>
+        </Route>
+        <Route exact path="/categoria/:categoriaId">
+          <ItemListContainer greetings="Bienvenido a Somos Wica" />
+        </Route>
+        <Route exact path="/item/:itemId">
+          <ItemDetailContainer />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
-
 export default App;

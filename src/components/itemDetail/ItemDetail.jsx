@@ -7,7 +7,7 @@ import "./ItemDetail.scss";
 const ItemDetail = ({ item }) => {
 
     return (
-		<Card key={item.id} style={{ width: "18rem", padding:"2rem", border:"solid #ffb11f"}}>
+		<Card key={item.id} style={{ width: "30rem",  padding:"2rem", border:"solid #ffb11f"}}>
             <Card.Img variant="top" src={item.pictureURL} style={{maxHeight: "200px"}}/>
             <Card.Body style={{height:"15rem", display:"flex", flexDirection:"column", alignItems:"center", justifyContent:"space-around"}}>
                 <Card.Title>{item.title}</Card.Title>

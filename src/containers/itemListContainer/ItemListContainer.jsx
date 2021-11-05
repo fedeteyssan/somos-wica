@@ -1,12 +1,15 @@
 
+import "./ItemListContainer.scss";
 import React, { useState, useEffect } from "react";
+import { useParams } from "react-router";
 import ItemList from "../../components/itemList/ItemList";
 import catalogue from "../../catalogue.json";
-import "./ItemListContainer.scss";
+
 
 const ItemListContainer = (props) => {
     
     const [products, setProducts] = useState([]);
+    const{ categoriaId } = useParams;
 
     const getProducts = (dataBase) => 
         new Promise((resolve, reject) => {
@@ -21,12 +24,14 @@ const ItemListContainer = (props) => {
 
     useEffect(() => {
         getProducts(catalogue)
-        .then((result) => setProducts(result))
+        .then((result) => {
+            categoriaId
+            ? setProducts(result.filter((product) => product.category === categoriaId))
+            : setProducts(catalogue);
+        })
         .catch((err) => console.log(err));
-    }, []);
+    }, [categoriaId]);
 
-
-    
 
     return (
        <div className="itemListContainer">
