@@ -20,16 +20,16 @@ const Navbar = () => {
                         <Link to="/nosotros">Nosotros</Link>
                     </li>
                     <li>
-                    <Link to="/categoria/medallones">Medallones</Link>
+                        <Link to="/categoria/medallones">Medallones</Link>
                     </li>
                     <li>
-                    <Link to="/categoria/nuggets">Nuggets</Link>
+                        <Link to="/categoria/nuggets">Nuggets</Link>
                     </li>
                     <li>
-                    <Link to="/donde-comprar">Donde Comprar</Link>
+                        <Link to="/donde-comprar">Donde Comprar</Link>
                     </li>
                     <li>
-                    <Link to="/contacto">Contacto</Link>
+                        <Link to="/contacto">Contacto</Link>
                     </li>
                 </ul>
                 <CartWidget />

@@ -15,8 +15,8 @@ function App() {
             <ItemListContainer greetings="Bienvenidos a Somos Wica" />
           </main>
         </Route>
-        <Route exact path="/categoria/:categoriaId">
-          <ItemListContainer greetings="Bienvenido a Somos Wica" />
+        <Route exact path="/categoria/:categoryID">
+          <ItemListContainer greetings="Bienvenidos a Somos Wica" />
         </Route>
         <Route exact path="/item/:itemId">
           <ItemDetailContainer />
