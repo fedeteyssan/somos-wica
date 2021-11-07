@@ -1,7 +1,7 @@
 [
     {
         "category":"medallones",
-        "id":1,
+        "id":"1",
         "title":"Wica Clásica",
         "description":"Medallón de porotos colorados con cebolla caramelizada, arroz yamani, harina de maiz, fécula de mandioca, mix de especias y sal. \n Presentación: 460gr. (4 unidades) \n Producto vegano, fuente de fibra, con ingredientes 100% naturales y sin TACC, conservantes ni colorantes.",
         "price":300,
@@ -11,7 +11,7 @@
 
     {
         "category":"medallones",
-        "id":2,
+        "id":"2",
         "title":"Wica Gourmet",
         "description":"Medallón de garbanzos con tomates al romero, arroz yamani, harina de maiz, fécula de mandioca, mix de especias y sal. \n Presentación: 460gr. (4 unidades) \n Producto vegano, fuente de fibra, con ingredientes 100% naturales y sin TACC, conservantes ni colorantes.",
         "price":300,
@@ -21,7 +21,7 @@
 
     {
         "category":"medallones",
-        "id":3,
+        "id":"3",
         "title":"Wica Diabla",
         "description":"Medallón de porotos negros con morrón rojo y verde, arroz yamani, harina de maiz, fécula de mandioca, mix de especias y sal. \n Presentación: 460gr. (4 unidades) \n Producto vegano, fuente de fibra, con ingredientes 100% naturales y sin TACC, conservantes ni colorantes.",
         "price":300,
@@ -31,7 +31,7 @@
 
     {
         "category":"medallones",
-        "id":4,
+        "id":"4",
         "title":"Wica Turca",
         "description":"Medallón de lentejas turcas con zapallo, zanahoria, arroz yamani, harina de maiz, fécula de mandioca, curry y sal. \n Presentación: 460gr. (4 unidades)\n Producto vegano, fuente de fibra, con ingredientes 100% naturales y sin TACC, conservantes ni colorantes.",
         "price":300,
@@ -41,7 +41,7 @@
 
     {
         "category":"nuggets",
-        "id":5,
+        "id":"5",
         "title":"Nuggets gourmet",
         "description":"Deliciosos nuggets veganos libres de gluten. Fuente de proteina. \n Presentación: 300gr.\n Ingredientes: garbanzos, quinoa, cebolla, perejil, ajo, limon, sal rosada, oregano, sarraceno y aceite de girasol alto oléico.",
         "price":450,
@@ -51,7 +51,7 @@
 
     {
         "category":"nuggets",
-        "id":6,
+        "id":"6",
         "title":"Nuggets clásico",
         "description":"Deliciosos nuggets veganos libres de gluten. Fuente de proteina. \n Presentación: 300gr.\n Ingredientes: lentejas, arroz integral, cebolla, perejil, ajo, limon, sal rosada, oregano, sarraceno y aceite de girasol alto oléico.",
         "price":450,

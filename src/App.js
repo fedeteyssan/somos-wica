@@ -18,7 +18,7 @@ function App() {
         <Route exact path="/categoria/:categoryID">
           <ItemListContainer greetings="Bienvenidos a Somos Wica" />
         </Route>
-        <Route exact path="/item/:itemId">
+        <Route exact path="/item/:itemID">
           <ItemDetailContainer />
         </Route>
       </Switch>

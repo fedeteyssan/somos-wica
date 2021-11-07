@@ -1,17 +1,19 @@
 
 import "./ItemListContainer.scss";
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router";
+import { useParams } from "react-router-dom";
 import { Container } from "react-bootstrap";
 import ItemList from "../../components/itemList/ItemList";
 import catalogue from "../../catalogue.json";
 
 
 
+
 const ItemListContainer = (props) => {
     
+    const{ categoryID } = useParams();
     const [products, setProducts] = useState([]);
-    const{ categoryID } = useParams;
+    
 
     const getProducts = (dataBase) => 
         new Promise((resolve, reject) => {
