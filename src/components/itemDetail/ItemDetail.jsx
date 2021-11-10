@@ -7,33 +7,20 @@ import "./ItemDetail.scss";
 
 const ItemDetail = ({item}) => {
 
-    const [stock, setStock] = useState(item.stock);
-    const [counter,setCounter] = useState(1);
-    const [flag, setFlag] = useState(true);
+    /*Defino una constante show, que cuando sea true monte el ItemCount, 
+    y al ser false (haciendo click en Agregar al carrito) que lo desmonte y monte el boton Ver Carrito */
+    const [show, setShow] = useState(true); 
+    const [quantity, setQuantity] = useState(null);
 
-   console.log(stock);
-    
+    const addToCart = (unitsAdded) => {
+        setQuantity(unitsAdded);
+        setShow(false);
+        item.stock-=unitsAdded;
+    }
 
-    const decreaseUnits = () =>{
-        if(counter>1){
-            setCounter(counter-1);
-            setStock(stock+1);
-        }else{
-            alert("No se puede agregar al carrito menos de 1 unidad");
-        };
-    };
-
-    const increaseUnits = () =>{
-        if(stock>0){
-            setCounter(counter+1);
-            setStock(stock-1);
-        }else{
-            alert("LLegaste al límite de unidades");
-        };
-    };
-
-    const addToCart = () => {
-        setFlag(false);
+    const keepShopping = () => {
+        setShow(true);
+        
     }
 
     return (
@@ -50,9 +37,16 @@ const ItemDetail = ({item}) => {
                             <br/><br/>
                             $ {item.price}
                         </Card.Text>
-                        {flag 
-                        ? (<ItemCount  initial={counter} onIncrease={increaseUnits} onDecrease={decreaseUnits} onAdd={addToCart}/>) 
-                        : ( <Link to="/cart"><Button variant="primary">Ver carrito</Button></Link>)} 
+                        {show 
+                            ? (<ItemCount stock={item.stock} onAdd={addToCart}/>)
+                            : ( <div>
+                                    <p>Se agregaron {quantity} {item.title}</p>
+                                    <Link to="/cart"><Button variant="primary">Ver carrito </Button></Link>
+                                    <Button variant="primary" onClick={keepShopping}>Seguir comprando </Button>
+                                </div>
+                            )
+                        } 
+                      
                     </Card.Body>
                 </Col>
             </Row>

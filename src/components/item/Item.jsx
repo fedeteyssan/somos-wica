@@ -8,7 +8,7 @@ y va a renderizar cada una de sus propiedades*/
 const Item = ({item}) =>{
 
     return(
-        <Card key={item.id} style={{ width: "18rem"}}>
+        <Card key={item.id} style={{ width: "18rem", height:"30rem"}}>
             <Link to={`/item/${item.id}`}>
                 <Card.Img variant="top" src={item.pictureURL} style={{maxHeight: "200px"}}/>
             </Link>

@@ -1,10 +1,27 @@
+import React, { useState } from "react";
 import { Button } from "react-bootstrap";
 import "./ItemCount.scss";
 
 
-const ItemCount = ({initial, onIncrease, onDecrease, onAdd}) => {
+const ItemCount = ({stock, onAdd}) => {
 
-    
+    const [counter,setCounter] = useState(1);
+
+    const onDecrease = () =>{
+        if(counter>1){
+            setCounter(counter-1);
+        }else{
+            alert("No se puede agregar al carrito menos de 1 unidad");
+        };
+    };
+
+    const onIncrease = () =>{
+        if(counter<stock){
+            setCounter(counter+1);
+        }else{
+            alert("LLegaste al límite de unidades");
+        };
+    };
     
 
     return (
@@ -12,10 +29,10 @@ const ItemCount = ({initial, onIncrease, onDecrease, onAdd}) => {
         <div>
             <div className="counter">
                <button onClick={onDecrease}>-</button>
-               <p>{initial}</p>
+               <p>{counter}</p>
                <button onClick={onIncrease}>+</button>
             </div>
-            <Button variant="primary" onClick={onAdd}>Añadir al carrito</Button>
+            <Button variant="primary" onClick={()=> {onAdd(counter)}}>Añadir al carrito</Button>
         </div>
        
     )
