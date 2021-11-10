@@ -7,8 +7,6 @@ import ItemList from "../../components/itemList/ItemList";
 import catalogue from "../../catalogue.json";
 
 
-
-
 const ItemListContainer = (props) => {
     
     const{ categoryID } = useParams();

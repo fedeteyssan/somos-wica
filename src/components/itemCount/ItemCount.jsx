@@ -23,6 +23,7 @@ const ItemCount = ({stock, onAdd}) => {
         };
     };
     
+    //El ItemCount (hijo) recibe como parámetro onAdd del ItemDetail (padre) la función AddToCart, que ejecutará al hacer click en el botón de Añadir al carrito
 
     return (
 
