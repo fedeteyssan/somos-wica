@@ -33,7 +33,7 @@ const Navbar = () => {
                         <Link to="/contacto">Contacto</Link>
                     </li>
                 </ul>
-                <CartWidget />
+                <Link to="/cart"><CartWidget /></Link>
                 <div className="hamburger">
                     <span className="bar"></span>
                     <span className="bar"></span>
