@@ -1,5 +1,15 @@
-.cart-icon{
-    width: 3rem;
-    margin-right:6rem;
-    
+
+.cart-widget{
+    display: flex;
+
+   span{
+       color: white;
+       height: 2rem;
+       width: 2rem;
+       border-radius: 50%;
+       background-color: rgb(199, 137, 22);
+       text-align: center;  
+       padding: 0.25rem 0rem 0rem 0rem;
+       font-size: 1.25rem;
+   }
 }

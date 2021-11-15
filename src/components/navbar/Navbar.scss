@@ -43,11 +43,12 @@ header{
                     text-decoration: none;
                     font-size: 1.6rem;
                     font-weight:bold;
-                    color: #f5f5dc;
+                    color: #f5f5dc !important;
                 }
                 
                 &:hover{
                     background-color: #e0bf93;
+                
                 }
             }
         }
