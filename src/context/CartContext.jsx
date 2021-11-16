@@ -24,6 +24,7 @@ const CartProvider = ({ children }) => {
 					(product) => product.id === item.id
 				);
 				repeatedItem.pickedQuantity += unitsAdded;
+				setCart([...cart]);
 				console.log(cart)
 			}
 		}

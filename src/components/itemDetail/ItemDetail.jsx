@@ -56,7 +56,7 @@ const ItemDetail = ({item}) => {
                 </Col>
             </Row>
         </Card>
-    );
+    )
 };
 
 export default ItemDetail;
