@@ -2,12 +2,13 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import ItemDetail from "../../components/itemDetail/ItemDetail";
 import catalogue from "../../catalogue.json";
+import "./ItemDetailContainer.scss";
 
 
 const ItemDetailContainer = () => {
 	
 	const{ itemID } = useParams();
-    const [products, setProducts] = useState([]);
+    const [products, setProducts] = useState(null);
 
 	const getProducts = (database) =>
 		new Promise((resolve, reject) => {
@@ -30,7 +31,7 @@ const ItemDetailContainer = () => {
 
 	return(
         <>
-		<ItemDetail item={products} />
+			{products ? <ItemDetail item={products}/> : <p className="Loader">Cargando producto</p>}
 		</>
     ) 
 };

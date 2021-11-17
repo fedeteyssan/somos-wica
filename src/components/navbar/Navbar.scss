@@ -5,13 +5,13 @@ header{
     nav{
         display: flex;
         justify-content: space-between;
-        align-items: center;
         padding: 0 1.5rem;
         background-color: #ffb11f;
 
         ul{
             display: flex;
-            justify-content: space-between;
+            padding-left: 0;
+            margin-bottom: 0;
             align-items: center;
 
             @media only screen and (max-width: 768px) {
