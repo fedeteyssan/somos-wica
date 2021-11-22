@@ -1,8 +1,11 @@
+import "./ItemDetailContainer.scss";
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import ItemDetail from "../../components/itemDetail/ItemDetail";
-import catalogue from "../../catalogue.json";
-import "./ItemDetailContainer.scss";
+import {getFirestore} from "../../firebase"
+import { doc, getDoc} from "@firebase/firestore";
+//import catalogue from "../../catalogue.json";
+
 
 
 const ItemDetailContainer = () => {
@@ -10,7 +13,19 @@ const ItemDetailContainer = () => {
 	const{ itemID } = useParams();
     const [products, setProducts] = useState(null);
 
-	const getProducts = (database) =>
+	useEffect(() => {
+		const db = getFirestore();
+		const item = doc(db, "items", itemID);
+		getDoc(item).then((snapshot) => {
+		  if (snapshot.exists()) {
+			setProducts(snapshot.data());
+		  }
+		});
+	  }, [itemID]);
+
+
+
+	/*const getProducts = (database) =>
 		new Promise((resolve, reject) => {
 			setTimeout(() => {
 				if (database) {
@@ -26,7 +41,7 @@ const ItemDetailContainer = () => {
 		.then((result) => {setProducts(result.find((product) => product.id===itemID));})
 		.catch((err) => console.log(err));
 		
-	}, [itemID]);
+	}, [itemID]);*/
 
 
 	return(

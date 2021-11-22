@@ -12,7 +12,7 @@ const Item = ({item}) =>{
                 <Card.Img variant="top" src={item.pictureURL} style={{maxHeight: "200px"}}/>
             </Link>
             <Card.Body style={{height:"15rem", display:"flex", flexDirection:"column", alignItems:"center", justifyContent:"space-around"}}>
-                <Card.Title>{item.title}</Card.Title>
+                <Card.Title>{item.name}</Card.Title>
                 <Card.Text>$ {item.price}</Card.Text>
             </Card.Body>
         </Card>

@@ -34,7 +34,7 @@ const ItemDetail = ({item}) => {
                 </Col>
                 <Col>
                     <Card.Body style={{height:"30rem", display:"flex", flexDirection:"column", alignItems:"center", justifyContent:"space-around"}}>
-                        <Card.Title>{item.title}</Card.Title>
+                        <Card.Title>{item.name}</Card.Title>
                         <Card.Text style={{textAlign:"center"}}>
                             {item.description}
                             <br/><br/>
@@ -43,7 +43,7 @@ const ItemDetail = ({item}) => {
                         {show 
                             ? (<ItemCount stock={item.stock} onAdd={addToCart}/>) //Paso la función addToCart como una prop que estará recibiendo el ItemCount en su parámetro onAdd 
                             : ( <div>
-                                    <p>Se agregaron {quantity} {item.title}</p>
+                                    <p>Se agregaron {quantity} {item.name}</p>
                                     <div className="card-buttons">
                                         <Link to="/cart"><Button variant="primary">Ver carrito </Button></Link>
                                         <Link to="/"><Button variant="primary" onClick={keepShopping}>Seguir comprando </Button></Link>

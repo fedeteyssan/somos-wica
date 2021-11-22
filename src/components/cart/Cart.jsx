@@ -21,7 +21,7 @@ const Cart = () =>{
                                     <Image src={itemInCart.pictureURL} style={{width: "100px"}}/>
                                 </Col>
                                 <Col>
-                                    <h2>{itemInCart.title}</h2>
+                                    <h2>{itemInCart.name}</h2>
                                     <p>{itemInCart.pickedQuantity} x $ {itemInCart.price}</p>
                                 </Col>
                                 <Col>
