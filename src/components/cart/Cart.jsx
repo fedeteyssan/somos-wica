@@ -1,12 +1,15 @@
 
+import "./Cart.scss";
 import { useCart } from "../../context/CartContext";
 import { Button, Row, Col, Image } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import "./Cart.scss";
+import BuyerForm from "../buyerForm/BuyerForm";
 
 const Cart = () =>{
 
     const { cart, removeItem, clearCart } = useCart();
+
+    const purchaseValue = cart.reduce((previousValue, currentValue) => previousValue + currentValue.pickedQuantity*currentValue.price,0);
 
     return (
         cart.length
@@ -33,15 +36,16 @@ const Cart = () =>{
 
                     <p className="total-price">
                         <strong>TOTAL: $
-                        {cart.reduce((previousValue, currentValue) => previousValue + currentValue.pickedQuantity*currentValue.price,0)}
+                        {purchaseValue}
                         </strong>
                     </p>
 
                     <div className="cart-buttons">
                         <Button variant="danger" onClick={clearCart}>Vaciar carrito</Button>
-					    <Button variant="success">Finalizar Compra</Button>  
+					    <Button variant="success">Ir al checkout</Button>  
 			        </div>
                 </div>
+                <BuyerForm totalValue={purchaseValue} cart={cart}  />
             </div>
         ):
         <div className="empty-cart">
