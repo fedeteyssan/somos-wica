@@ -17,9 +17,10 @@ const ItemListContainer = (props) => {
     useEffect(() => {
 		const db = getFirestore();
 
-        let q = query(collection(db, "items"));
+        const q = query(collection(db, "items"));
 
-        if (!categoryID) {getDocs(q).then((snapshot) => {setProducts(snapshot.docs.map((doc) => doc.data()));
+        if (!categoryID) {getDocs(q).then((snapshot) => {
+            setProducts(snapshot.docs.map((doc) => ({...doc.data(), id: doc.id})));
         });
         } else {
             const q = query(
@@ -27,7 +28,7 @@ const ItemListContainer = (props) => {
               where("category", "==", categoryID)
             );
             getDocs(q).then((snapshot) => {
-              setProducts(snapshot.docs.map((doc) => doc.data()));
+              setProducts(snapshot.docs.map((doc) => ({...doc.data(), id: doc.id})));
             });
         }
     }, [categoryID]);
