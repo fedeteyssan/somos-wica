@@ -18,7 +18,8 @@ const ItemDetailContainer = () => {
 		const item = doc(db, "items", itemID);
 		getDoc(item).then((snapshot) => {
 		  if (snapshot.exists()) {
-			setProducts(snapshot.data());
+			const gotProduct = {...snapshot.data(), id: item.id};
+			setProducts(gotProduct)
 		  }
 		});
 	  }, [itemID]);

@@ -18,7 +18,6 @@ const ItemDetail = ({item}) => {
         addItem(item, unitsAdded);
         setQuantity(unitsAdded);
         setShow(false);
-        item.stock-=unitsAdded; //Al stock le resto las unidades agregadas
     }
 
     const keepShopping = () => {

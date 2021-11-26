@@ -10,22 +10,21 @@ const CartProvider = ({ children }) => {
 	const [cart, setCart] = useState([]);
 
     const addItem = (item, unitsAdded) => {
-		// Defino un objeto newItem que será el item a agregar, con una nueva propiedad de picked quantity que será la cantidad seleccionada
-		const newItem = { ...item, pickedQuantity: unitsAdded };
+		// Defino un objeto itemToAdd que será el item a agregar, con una nueva propiedad de picked quantity que será la cantidad seleccionada
+		const itemToAdd = { ...item, pickedQuantity: unitsAdded, stock:item.stock- unitsAdded };
         // Defino una variable isInCart que devolverá TRUE si en el cart hay un id que coincida con el del item ingresado
 		const isInCart = cart.some((product) => product.id === item.id);
         // Si hay stock del item y no está en el cart, entonces que lo agregue
 		if (item.stock > 0) {
 			if (!isInCart) {
-				setCart([...cart, newItem]);  
+				setCart([...cart, itemToAdd]);  
 			} else {
 				//Si ya está en el cart, que encuentre cual es el repetido, y que acumule sus cantidades
-				const repeatedItem = cart.find(
-					(product) => product.id === item.id
-				);
-				repeatedItem.pickedQuantity += unitsAdded;
-				setCart([...cart]);
-				console.log(cart)
+				const newCart = cart.map((product)=> product.id===item.id
+				?{...product, pickedQuantity: product.pickedQuantity+unitsAdded, stock:product.stock-unitsAdded}
+				:product);
+				setCart(newCart);
+				console.log(newCart);
 			}
 		}
 	};

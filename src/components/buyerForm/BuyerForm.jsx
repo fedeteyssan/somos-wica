@@ -41,6 +41,8 @@ const BuyerForm = ({cart, totalValue}) => {
 		addDoc(orders, newOrder).then(({ id }) => {
 			
 		});
+
+        
 	};
 
     return(
