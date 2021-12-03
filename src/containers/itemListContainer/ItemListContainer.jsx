@@ -19,6 +19,7 @@ const ItemListContainer = (props) => {
 
         const q = query(collection(db, "items"));
 
+        //Si no está definida ninguna categoría en la ruta, que no filtre
         if (!categoryID) {getDocs(q).then((snapshot) => {
             setProducts(snapshot.docs.map((doc) => ({...doc.data(), id: doc.id})));
         });

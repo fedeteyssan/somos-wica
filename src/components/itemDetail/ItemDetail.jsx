@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import ItemCount from "../itemCount/ItemCount";
 import { Card, Button, Row, Col} from "react-bootstrap";
 import { Link } from "react-router-dom";
@@ -8,22 +7,8 @@ import { useCart } from "../../context/CartContext";
 
 const ItemDetail = ({item}) => {
 
-    //Defino una constante show, que cuando sea true monte el ItemCount, y al ser false (haciendo click en Agregar al carrito) que lo desmonte y monte el boton Ver Carrito 
-    const [show, setShow] = useState(true); 
-    const [quantity, setQuantity] = useState(null);
-    const { addItem } = useCart();
-
-    //La función addToCart va a recibir como parámetro el valor del counter del ItemCount (hijo)
-    const addToCart = (unitsAdded) => {
-        addItem(item, unitsAdded);
-        setQuantity(unitsAdded);
-        setShow(false);
-    }
-
-    const keepShopping = () => {
-        setShow(true);
-        
-    }
+    const { cart } = useCart();
+    const itemInCart = cart.find((product)=> product.id===item.id);
 
     return (
 		<Card key={item.id} style={{ width: "50rem", marginTop:"10rem", padding:"2rem", border:"solid #ffb11f"}}>
@@ -39,18 +24,18 @@ const ItemDetail = ({item}) => {
                             <br/><br/>
                             $ {item.price}
                         </Card.Text>
-                        {show 
-                            ? (<ItemCount stock={item.stock} onAdd={addToCart}/>) //Paso la función addToCart como una prop que estará recibiendo el ItemCount en su parámetro onAdd 
-                            : ( <div>
-                                    <p>Se agregaron {quantity} {item.name}</p>
+                            <ItemCount item={item} /> 
+                            {itemInCart? 
+                            <>
+                                <div>
                                     <div className="card-buttons">
                                         <Link to="/cart"><Button variant="primary">Ver carrito </Button></Link>
-                                        <Link to="/"><Button variant="primary" onClick={keepShopping}>Seguir comprando </Button></Link>
+                                        <Link to="/"><Button variant="primary">Seguir comprando </Button></Link>
                                     </div>
-                                    
                                 </div>
-                            )
-                        } 
+                            </>
+                            :<></>
+                            } 
                     </Card.Body>
                 </Col>
             </Row>
